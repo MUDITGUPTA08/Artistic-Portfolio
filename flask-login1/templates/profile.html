@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.name }}'s Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Welcome to your profile, {{ user.name }}!</h1>
+        
+        {% if user.profile_picture %}
+        <img src="{{ url_for('static', filename='uploads/' + user.profile_picture) }}" alt="Profile Picture" width="150" height="150">
+        {% else %}
+            <p>No profile picture uploaded.</p>
+        {% endif %}
+        
+        <h3>Details:</h3>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Age:</strong> {{ user.age }}</p>
+        <p><strong>Gender:</strong> {{ user.gender }}</p>
+        <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+    </div>
+    <div class="gallery" style="
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg" style="
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;">
+
+  
+</div>
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <a href="{{ url_for('logout') }}" style="
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #dc3545;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+    ">Logout</a>
+</div>
+
+
+</body>
+</html>
